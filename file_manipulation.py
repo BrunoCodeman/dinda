@@ -14,6 +14,6 @@ def get_accounts(file_name):
 
 def generate_output_file(accounts):
     f = open('accounts_after_transaction.csv', 'w')
-    for account in accounts:
-        f.write('%s, %i \n' % (account['id'], account['amount']))
+    for account_id, amount in accounts.items():
+        f.write('%s, %i \n' % (account_id, amount))
     f.close()
